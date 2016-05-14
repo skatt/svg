@@ -27,7 +27,8 @@ render_element(Record) ->
 
 %% Common SVG attributes
 svg_sketch(Record)-> [
-	{<<"sketch:type">>, Record#g.sketchtype}
+	{<<"sketch:type">>, Record#path.sketchtype}
+].
 
 svg_conditional_processing(Record)-> [
 	{<<"requiredExtensions">>, Record#path.requiredExtensions},
