@@ -21,10 +21,11 @@
 		stroke_miterlimit, stroke_opacity, stroke_width, text_anchor, text_decoration, text_rendering, unicode_bidi, visibility, word_spacing, writing_mode).
 -define(SVG_TRANSFERT_FUNCTION, type, tableValues, slope, intercept, amplitude, exponent, offset).
 -define(SVG_XLINK, xlinkhref, xlinktype, xlinkrole, xlinkarcrole, xlinktitle, xlinkshow, xlinkactuate).
+-define(SVG_SKETCH, sketchtype).
 
 
 % SVG
--record(svg, {?ELEMENT_BASE(element_svg), version="1.1", baseProfile="full", xmlns="http://www.w3.org/2000/svg", xmlnsxlink="http://www.w3.org/1999/xlink", xmlnsev="http://www.w3.org/2001/xml-events", preserveAspectRatio, contentScriptType, contentStyleType, viewBox, externalResourcesRequired, ?SVG_CONDITIONAL_PROCESSING, ?SVG_CORE, ?SVG_DOCUMENT_EVENT, ?SVG_FILTER_PRIMITIVE, ?SVG_GRAPHICAL_EVENT, ?SVG_PRESENTATION, ?SVG_TRANSFERT_FUNCTION, ?SVG_XLINK}).
+-record(svg, {?ELEMENT_BASE(element_svg), version="1.1", baseProfile="full", xmlns="http://www.w3.org/2000/svg", xmlnsxlink="http://www.w3.org/1999/xlink", xmlnssketch="http://www.bohemiancoding.com/sketch/ns", xmlnsev="http://www.w3.org/2001/xml-events", preserveAspectRatio, contentScriptType, contentStyleType, viewBox, externalResourcesRequired, ?SVG_CONDITIONAL_PROCESSING, ?SVG_CORE, ?SVG_DOCUMENT_EVENT, ?SVG_FILTER_PRIMITIVE, ?SVG_GRAPHICAL_EVENT, ?SVG_PRESENTATION, ?SVG_TRANSFERT_FUNCTION, ?SVG_XLINK}).
 -record(altGlyph, {?ELEMENT_BASE(element_altglyph), x, y, dx, dy, rotate, glyphRef, format, externalResourcesRequired, ?SVG_CONDITIONAL_PROCESSING, ?SVG_CORE, ?SVG_GRAPHICAL_EVENT, ?SVG_PRESENTATION, ?SVG_XLINK}).
 -record(altGlyphDef, {?ELEMENT_BASE(element_altglyphdef), ?SVG_CORE}).
 -record(altGlyphItem, {?ELEMENT_BASE(element_altglyphitem), ?SVG_CORE}).
@@ -70,7 +71,7 @@
 -record(font_face_src, {?ELEMENT_BASE(element_fontfacesrc), ?SVG_CORE}).
 -record(font_face_uri, {?ELEMENT_BASE(element_fontfaceuri), ?SVG_CORE, ?SVG_XLINK}).
 -record(foreignObject, {?ELEMENT_BASE(element_foreignobject), x, y, width, height, transform, externalResourcesRequired, ?SVG_CONDITIONAL_PROCESSING, ?SVG_CORE, ?SVG_GRAPHICAL_EVENT, ?SVG_PRESENTATION}).
--record(g, {?ELEMENT_BASE(element_g), transform, externalResourcesRequired,  ?SVG_CONDITIONAL_PROCESSING, ?SVG_CORE, ?SVG_GRAPHICAL_EVENT, ?SVG_PRESENTATION}).
+-record(g, {?ELEMENT_BASE(element_g), transform, externalResourcesRequired,  ?SVG_SKETCH, ?SVG_CONDITIONAL_PROCESSING, ?SVG_CORE, ?SVG_GRAPHICAL_EVENT, ?SVG_PRESENTATION}).
 -record(glyph, {?ELEMENT_BASE(element_glyph), d, horiz_adv_x, vert_origin_x, vert_origin_y, vert_adv_y, unicode, glyph_name, orientation, arabic_form, ?SVG_CORE, ?SVG_PRESENTATION}).
 -record(glyphRef, {?ELEMENT_BASE(element_glyphref), x, y, dx, dy, glyphRef, format, ?SVG_CORE, ?SVG_PRESENTATION, ?SVG_XLINK}).
 -record(hkern, {?ELEMENT_BASE(element_hkern), u1, g1, u2, g2, k, ?SVG_CORE}).
@@ -83,7 +84,7 @@
 -record(metadata, {?ELEMENT_BASE(element_metadata), ?SVG_CORE}).
 -record(missing_glyph, {?ELEMENT_BASE(element_missingglyph), d, horiz_adv_x, vert_origin_x, vert_origin_y, vert_adv_y, ?SVG_CORE, ?SVG_PRESENTATION}).
 -record(mpath, {?ELEMENT_BASE(element_mpath), externalResourcesRequired, ?SVG_CORE, ?SVG_XLINK}).
--record(path, {?ELEMENT_BASE(element_path), d, pathLength, transform, externalResourcesRequired,  ?SVG_CONDITIONAL_PROCESSING, ?SVG_CORE, ?SVG_GRAPHICAL_EVENT, ?SVG_PRESENTATION}).
+-record(path, {?ELEMENT_BASE(element_path), d, pathLength, transform, externalResourcesRequired, ?SVG_SKETCH,  ?SVG_CONDITIONAL_PROCESSING, ?SVG_CORE, ?SVG_GRAPHICAL_EVENT, ?SVG_PRESENTATION}).
 -record(pattern, {?ELEMENT_BASE(element_pattern), patternUnits, patternContentUnits, patternTransform, x, y, width, height, preserveAspectRatio, viewBox, externalResourcesRequired, ?SVG_CONDITIONAL_PROCESSING, ?SVG_CORE, ?SVG_PRESENTATION, ?SVG_XLINK}).
 -record(polygon, {?ELEMENT_BASE(element_polygon), points, transform, externalResourcesRequired, ?SVG_CONDITIONAL_PROCESSING, ?SVG_CORE, ?SVG_GRAPHICAL_EVENT, ?SVG_PRESENTATION}).
 -record(polyline, {?ELEMENT_BASE(element_polyline), points, transform, externalResourcesRequired, ?SVG_CONDITIONAL_PROCESSING, ?SVG_CORE, ?SVG_GRAPHICAL_EVENT, ?SVG_PRESENTATION}).

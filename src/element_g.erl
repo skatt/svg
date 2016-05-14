@@ -17,12 +17,16 @@ render_element(Record) ->
 		svg_core(Record),
 		svg_graphical_event(Record),
 		svg_presentation(Record),
+		svg_sketch(Record),
 		Record#g.data_fields,
 		Record#g.aria_states
 	])).
 
 
 %% Common SVG attributes
+svg_sketch(Record)-> [
+	{<<"sketch:type">>, Record#g.sketchtype}
+].
 svg_conditional_processing(Record)-> [
 	{<<"requiredExtensions">>, Record#g.requiredExtensions},
 	{<<"requiredFeatures">>, Record#g.requiredFeatures},
