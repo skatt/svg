@@ -14,7 +14,7 @@ render_element(Record) ->
 			{<<"baseProfile">>, Record#svg.baseProfile},
 			{<<"xmlns">>, Record#svg.xmlns},
 			{<<"xmlns:xlink">>, Record#svg.xmlnsxlink},
-			{<<"xmlns:sketch">>, Record#svg.xmlnsxsketch},
+			{<<"xmlns:sketch">>, Record#svg.xmlnssketch},
 			{<<"xmlns:ev">>, Record#svg.xmlnsev},
 			{<<"preserveAspectRatio">>, Record#svg.preserveAspectRatio},
 			{<<"contentScriptType">>, Record#svg.contentScriptType},
